@@ -1,0 +1,46 @@
+<div class="tab-pane fade show active" id="edit-item" role="tabpanel" aria-labelledby="nav-profile-tab">
+    <div class="card shadow my-3">
+        <div class="card-body">
+            <form action="/admin/item/<%= item._id %>?_method=PUT" method="POST" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label>Title</label>
+                    <input type="text" class="form-control" name="title" placeholder="Enter title" required
+                        autocomplete="additional-name" value="<%= item.title %>">
+                </div>
+                <div class="form-group">
+                    <label>Price</label>
+                    <input type="number" class="form-control" name="price" placeholder="Enter price" required
+                        autocomplete="additional-name" value="<%= item.price %>">
+                </div>
+                <div class="form-group">
+                    <label>City</label>
+                    <input type="text" class="form-control" name="city" placeholder="Enter city" required
+                        autocomplete="additional-name" value="<%= item.city %>">
+                </div>
+                <div class="form-group">
+                    <label>Category</label>
+                    <select class="form-control" name="categoryId">
+                        <% for( let index = 0; index < category.length; index++ ) { %>
+                        <% if (category[index]._id == item.categoryId.id) { %>
+                        <option value="<%= category[index]._id %>" selected><%= category[index].name %>
+                        </option>
+                        <% }else { %>
+                        <option value="<%= category[index]._id %>"><%= category[index].name %></option>
+                        <% }  %>
+                        <% } %>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="image-add">Image</label>
+                    <input type="file" class="form-control-file" name="image" multiple id="image-add">
+                </div>
+                <div class="form-group">
+                    <label>Descriptiom</label>
+                    <textarea class="form-control" name="about"><%= item.description %> </textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Save</button>
+                <a href="/admin/item/" class="btn btn-outline-secondary">Back</a>
+            </form>
+        </div>
+    </div>
+</div>

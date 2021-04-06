@@ -1,0 +1,44 @@
+<!-- Modal -->
+<div class="modal fade" id="edit-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Edit Category</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <form action="/admin/bank?_method=PUT" method="POST" enctype="multipart/form-data">
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label>Name Bank</label>
+                        <input type="text" class="form-control nameBank" name="nameBank" placeholder="Enter Name Bank"
+                            autocomplete="off" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Nomor Rekening</label>
+                        <input type="text" class="form-control nomorRekening" name="nomorRekening"
+                            placeholder="Enter Nomor Rekening" autocomplete="off" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Name</label>
+                        <input type="text" class="form-control name" name="name" placeholder="Enter Name"
+                            autocomplete="off" required>
+                    </div>
+                    <div class="form-group">
+                        <img class="image">
+                        <span>Select image for update</span>
+                        <input type="file" class="form-control-file my-2" id="image" name="image">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <input type="hidden" class="id" name="id">
+                    <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">
+                        Close
+                    </button>
+                    <button type="submit" class="btn btn-warning">Edit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

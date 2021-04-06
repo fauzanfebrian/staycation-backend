@@ -1,0 +1,76 @@
+<div class="tab-pane fade" id="show-activity" role="tabpanel" aria-labelledby="nav-home-tab">
+    <!-- DataTales Example -->
+    <div class="card shadow my-3">
+        <div class="card-body">
+            <div class="row">
+                <div class="col-md-7">
+                    <!-- DataTales Example -->
+                    <div class="table-responsive">
+                        <table class="table table-bordered" id="dataTableActivity" width="100%" cellspacing="0">
+                            <thead>
+                                <tr>
+                                    <th>No</th>
+                                    <th>Name</th>
+                                    <th>Type</th>
+                                    <th>Image Url</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <% for( let i = 0; i < activity.length; i++ ) { %>
+                                <tr>
+                                    <td><%= i + 1 %></td>
+                                    <td><%= activity[i].name %></td>
+                                    <td><%= activity[i].type %></td>
+                                    <td><img src="/<%= activity[i].imageUrl %>"
+                                            alt="<%= activity[i].nameactivity %> proof payment" width="75">
+                                    </td>
+                                    <td>
+                                        <form
+                                            action="/admin/item/<%= itemId %>/activity/<%= activity[i].id %>?_method=DELETE"
+                                            method="post">
+                                            <a type="button" class="btn btn-warning btn-circle btn-sm button-update"
+                                                href="javascript:void()" data-id="<%= activity[i].id %>"
+                                                data-name="<%= activity[i].name %>" data-type="<%= activity[i].type %>">
+                                                <i class="fas fa-edit"></i>
+                                            </a>
+                                            <button type="submit" class="btn btn-danger btn-circle btn-sm">
+                                                <i class="fas fa-trash"></i>
+                                            </button>
+                                        </form>
+                                    </td>
+                                </tr>
+                                <% } %>
+                            </tbody>
+                        </table>
+                    </div>
+                    <!--End DataTables -->
+                </div>
+                <div class="col-md-5">
+                    <form action="/admin/item/add/activity" method="POST" enctype="multipart/form-data">
+                        <div class="form-group">
+                            <label>Name</label>
+                            <input type="text" class="form-control" name="name" placeholder="Enter Name"
+                                autocomplete="additional-name" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Type</label>
+                            <input type="text" class="form-control" name="type" placeholder="Enter type"
+                                autocomplete="additional-name" required>
+                        </div>
+                        <div class="form-group">
+                            <span class="my-0">Select Image</span>
+                            <input type="file" class="form-control-file my-2" name="image">
+                        </div>
+                        <input type="hidden" name="itemId" value="<%= itemId %>">
+                        <button type="submit" class="btn btn-primary">Save</button>
+                    </form>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!--End DataTables -->
+
+</div>

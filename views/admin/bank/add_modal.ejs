@@ -1,0 +1,41 @@
+<!-- Modal -->
+<div class="modal fade" id="add-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Add Bank</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <form action="/admin/bank" method="POST" enctype="multipart/form-data">
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label>Name Bank</label>
+                        <input type="text" class="form-control" name="nameBank" placeholder="Enter Name Bank"
+                            autocomplete="off" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Nomor Rekening</label>
+                        <input type="text" class="form-control" name="nomorRekening" placeholder="Enter Nomor Rekening"
+                            autocomplete="off" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Name</label>
+                        <input type="text" class="form-control" name="name" placeholder="Enter Name" autocomplete="off"
+                            required>
+                    </div>
+                    <div class="form-group">
+                        <span class="my-0">Select Image</span>
+                        <input type="file" class="form-control-file my-2" name="image">
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">
+                            Close
+                        </button>
+                        <button type="submit" class="btn btn-primary">Add</button>
+                    </div>
+            </form>
+        </div>
+    </div>
+</div>
