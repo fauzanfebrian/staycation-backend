@@ -9,7 +9,7 @@ const flash = require("connect-flash");
 // mongoose conection
 const mongoose = require("mongoose");
 mongoose.connect(
-  "mongodb+srv://fauzanfebriansyah:lahat1725@cluster0.gvlwk.mongodb.net/db_staycation?retryWrites=true&w=majority",
+  "mongodb+srv://username:password@cluster0.gvlwk.mongodb.net/db_staycation?retryWrites=true&w=majority",
   {
     useNewUrlParser: true,
     useUnifiedTopology: true,
